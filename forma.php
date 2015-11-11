@@ -44,41 +44,6 @@ require 'mysql.php';
         getTable();
     ?>
 
-<!--    <tr>-->
-<!--        <td id="nombre-1" class="celda" ondblclick="modificar(this)">Luis</td>-->
-<!---->
-<!--        <td id="apellido-1" class="celda" ondblclick="modificar(this)">Perez</td>-->
-<!---->
-<!--        <td id="direccion-1" class="celda" ondblclick="modificar(this)">G. Sada 2501</td>-->
-<!---->
-<!--        <td id="codigo-1" class="celda" ondblclick="modificar(this)">64849</td>-->
-<!---->
-<!--        <td id="ciudad-1" class="celda" ondblclick="modificar(this)">Monterrey</td>-->
-<!---->
-<!--        <td id="hijos-1" class="celda" ondblclick="modificar(this)">2</td>-->
-<!---->
-<!--        <td id="email-1" class="celda" ondblclick="modificar(this)">luis.perez@itesm.mx</td>-->
-<!---->
-<!--    </tr>-->
-<!---->
-<!--    <tr>-->
-<!--        <td id="nombre-2" class="celda" ondblclick="modificar(this)">Pablo</td>-->
-<!---->
-<!--        <td id="apellido-2" class="celda" ondblclick="modificar(this)">Lopez</td>-->
-<!---->
-<!--        <td id="direccion-2" class="celda" ondblclick="modificar(this)">Blanco Encalada 100</td>-->
-<!---->
-<!--        <td id="codigo-2" class="celda" ondblclick="modificar(this)">66766</td>-->
-<!---->
-<!--        <td id="ciudad-2" class="celda" ondblclick="modificar(this)">Santiago</td>-->
-<!---->
-<!--        <td id="hijos-2" class="celda" ondblclick="modificar(this)">3</td>-->
-<!---->
-<!--        <td id="email-2" class="celda" ondblclick="modificar(this)">plopez@itesm.mx</td>-->
-<!---->
-<!--    </tr>-->
-
-
 </table>
 
 </body>
