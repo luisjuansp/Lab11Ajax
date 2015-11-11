@@ -1,47 +1,49 @@
-
-
-
 function trim(value) {
-   var temp = value;
-   var obj = /^(\s*)([\W\w]*)(\b\s*$)/;
-   if (obj.test(temp)) { temp = temp.replace(obj, '$2');}
-   var obj = /  /g;
-   while (temp.match(obj)) { temp = temp.replace(obj, " ");}
-   return temp;
+    var temp = value;
+    var obj = /^(\s*)([\W\w]*)(\b\s*$)/;
+    if (obj.test(temp)) {
+        temp = temp.replace(obj, '$2');
+    }
+    var obj = /  /g;
+    while (temp.match(obj)) {
+        temp = temp.replace(obj, " ");
+    }
+    return temp;
 }
 
 //Funcion para calcular el largo en pixels det texto dado
-function getTextWidth(texto)
-{
-	//Valor por default : 150 pixels
-	var ancho = 150;
+function getTextWidth(texto) {
+    //Valor por default : 150 pixels
+    var ancho = 150;
 
-	if(trim(texto) == "")
-	{
-		return ancho;
-	}
+    if (trim(texto) == "") {
+        return ancho;
+    }
 
-	//Creaci�n de un span escondido que se puedr� medir 
-	var span = document.createElement("span");
-	span.style.visibility = "hidden";
-	span.style.position = "absolute";
 
-	//Se agrega el texto al span y el span a la p�gina
-	span.appendChild(document.createTextNode(texto));
-	document.getElementsByTagName("body")[0].appendChild(span);
+    //Creaci�n de un span escondido que se puedr� medir
+    var span = document.createElement("span");
+    span.style.visibility = "hidden";
+    span.style.position = "absolute";
 
-	//tama�o del texto
-	ancho = span.offsetWidth;
+    //Se agrega el texto al span y el span a la p�gina
+    span.appendChild(document.createTextNode(texto));
+    document.getElementsByTagName("body")[0].appendChild(span);
 
-	//Eliminaci�n del span
-	document.getElementsByTagName("body")[0].removeChild(span);
-	span = null;
+    //tama�o del texto
+    ancho = span.offsetWidth;
 
-	return ancho;
+    //Eliminaci�n del span
+    document.getElementsByTagName("body")[0].removeChild(span);
+    span = null;
+
+
+    return ancho;
 }
 
 
 //Funcion de modificacion del elemento seleccionado mediante doble-click
+
 function modificar(obj)
 { 
 	//Objeto que sirve para editar el valor en la pagina 
@@ -85,13 +87,23 @@ function modificar(obj)
 			delete input;
 		}
 	};
+
 }
 
 
 //Salvando las modificaciones
-function salvarMod(obj, valor)
-{
-obj.replaceChild(document.createTextNode(valor), obj.firstChild);
+function salvarMod(obj, valor) {
+    obj.replaceChild(document.createTextNode(valor), obj.firstChild);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", 'updateTable.php', true);
+    var data = new FormData();
+    var idData = obj.id.split("-");
+    console.log(idData);
+    data.append("id", idData[1]);
+    data.append("column", idData[0]);
+    data.append("valor", valor);
+    xhr.send(data);
 
 }
 
