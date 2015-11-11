@@ -110,6 +110,7 @@ function salvarMod(obj, valor) {
 xmlhttp = new XMLHttpRequest();
 
 function addRow() {
+
 	xmlhttp.onreadystatechange =
 			function () {
 				/* 0: Request to server hasn't started
