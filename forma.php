@@ -19,11 +19,13 @@ require 'mysql.php';
     <title>Modificación "en línea" desde una página web</title>
 
     <link rel="StyleSheet" type="text/css" href="tabla.css"/>
-    <script type="text/javascript" src="modificacion.js"></script>
+    <script type="text/javascript" src="modificacion.js"> </script>
+
 
 </head>
 
 <body>
+
 <h1>Lista de usuarios</h1>
 
 
@@ -80,6 +82,8 @@ require 'mysql.php';
 
 
 </table>
+<br>
+<input type="button" value="Agregar Fila" onclick="addRow()"><input>
 
 </body>
 </html>

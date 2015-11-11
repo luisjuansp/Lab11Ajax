@@ -21,19 +21,19 @@ function getTextWidth(texto)
 		return ancho;
 	}
 
-	//Creación de un span escondido que se puedrá medir 
+	//Creaciï¿½n de un span escondido que se puedrï¿½ medir 
 	var span = document.createElement("span");
 	span.style.visibility = "hidden";
 	span.style.position = "absolute";
 
-	//Se agrega el texto al span y el span a la página
+	//Se agrega el texto al span y el span a la pï¿½gina
 	span.appendChild(document.createTextNode(texto));
 	document.getElementsByTagName("body")[0].appendChild(span);
 
-	//tamaño del texto
+	//tamaï¿½o del texto
 	ancho = span.offsetWidth;
 
-	//Eliminación del span
+	//Eliminaciï¿½n del span
 	document.getElementsByTagName("body")[0].removeChild(span);
 	span = null;
 
@@ -57,7 +57,7 @@ function modificar(obj)
 		input.value = obj.textContent;
 	input.value = trim(input.value);
 
-	//a la caja INPUT se la asigna un tamaño un poco mayor que el texto a modificar
+	//a la caja INPUT se la asigna un tamaï¿½o un poco mayor que el texto a modificar
 	input.style.width  = getTextWidth(input.value) + 30 + "px";
 
 	//Se remplaza el texto por el objeto INPUT
@@ -67,7 +67,7 @@ function modificar(obj)
 	input.focus();
 	input.select();
 
-	//Asignación de los 2 eventos que provocarán la escritura en la base de datos 
+	//Asignaciï¿½n de los 2 eventos que provocarï¿½n la escritura en la base de datos 
 
       //Salida de la INPUT
 	input.onblur = function salir()
@@ -95,3 +95,25 @@ obj.replaceChild(document.createTextNode(valor), obj.firstChild);
 
 }
 
+xmlhttp = new XMLHttpRequest();
+
+function addRow() {
+	xmlhttp.onreadystatechange =
+			function () {
+				/* 0: Request to server hasn't started
+				 * 1: Connected to the Server
+				 * 2: Server has received our request
+				 * 3: Server Processing
+				 * 4: Request is finished and data is ready
+				 */
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					//hacer update
+				}
+				else {
+					//document.getElementById('scores').innerHTML = "<strong>Waiting for Server Response... </strong>";
+				}
+			}
+	xmlhttp.open("POST", 'agregar.php', true);
+	xmlhttp.send();
+
+}
