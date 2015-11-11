@@ -48,7 +48,7 @@ require 'mysql.php';
 
 </table>
 <br>
-<input type="button" value="Agregar Fila" onclick="addRow()"><input>
+<input type="button" value="Agregar Fila" onclick="addRow()"/>
 
 </body>
 </html>

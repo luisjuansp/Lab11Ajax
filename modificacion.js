@@ -107,24 +107,9 @@ function salvarMod(obj, valor) {
 
 }
 
-xmlhttp = new XMLHttpRequest();
-
 function addRow() {
-	xmlhttp.onreadystatechange =
-			function () {
-				/* 0: Request to server hasn't started
-				 * 1: Connected to the Server
-				 * 2: Server has received our request
-				 * 3: Server Processing
-				 * 4: Request is finished and data is ready
-				 */
-				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-					//hacer update
-				}
-				else {
-					//document.getElementById('scores').innerHTML = "<strong>Waiting for Server Response... </strong>";
-				}
-			}
+
+    var xmlhttp = new XMLHttpRequest();
 	xmlhttp.open("POST", 'agregar.php', true);
 	xmlhttp.send();
 
