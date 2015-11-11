@@ -26,22 +26,4 @@ if ($mysqli->query($sql) === TRUE) {
 
 $mysqli->close();
 
-//$stmt = $mysqli->prepare("UPDATE registrados SET " . $column . "=? WHERE id=" . $id);
-///* BK: always check whether the prepare() succeeded */
-//if ($stmt === false) {
-//    trigger_error($mysqli->error);
-//} else {
-//    if (is_numeric($valor)) {
-//        $stmt->bind_param('i', $valor);
-//    } else {
-//        $stmt->bind_param('s', $valor);
-//    }
-//    $status = $stmt->execute();
-//    if ($status === false) {
-//        trigger_error($stmt->error);
-//    } else {
-//        printf("%d Row inserted.\n", $stmt->affected_rows);
-//    }
-//}
-
 ?>

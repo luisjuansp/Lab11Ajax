@@ -12,9 +12,9 @@ if ($mysqli->connect_errno) {
 }
 
 $instruccion =
-    "insert into registrados (nombre, apellido, direccion, codigo, ciudad,hijos,email) values ('nombre', 'apellido', 'direccion', 'codigo', 'ciudad','hijos','email')";
-if(!$mysqli->query($instruccion))
+    "insert into registrados (nombre, apellido, direccion, codigo, ciudad, hijos, email) values ('nombre', 'apellido', 'direccion', 'codigo', 'ciudad','hijos', 'email')";
+if (!$mysqli->query($instruccion))
     echo "Table insertion failed: (" . $mysqli->errno . ") " . $mysqli->error;
-$mysqli->close ();
+$mysqli->close();
 
 ?>
