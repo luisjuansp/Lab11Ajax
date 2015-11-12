@@ -16,7 +16,7 @@ require 'mysql.php';
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 
-    <title>Modificación "en línea" desde una página web</title>
+    <title>Modificación en línea" desde una página web</title>
 
     <link rel="StyleSheet" type="text/css" href="tabla.css"/>
     <script type="text/javascript" src="modificacion.js"> </script>
@@ -48,7 +48,7 @@ require 'mysql.php';
 
 </table>
 <br>
-<input type="button" value="Agregar Fila" onclick="addRow()"/>
+<button onclick="addRow()">Agregar Fila</button>
 
 </body>
 </html>
