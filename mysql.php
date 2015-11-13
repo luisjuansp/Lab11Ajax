@@ -22,7 +22,7 @@ function getTable(){
         print("<td id='ciudad-".$row["id"]."' class=\"celda\" ondblclick=\"modificar(this)\">".$row["ciudad"]."</td>");
         print("<td id='hijos-".$row["id"]."' class=\"celda\" ondblclick=\"modificar(this)\">".$row["hijos"]."</td>");
         print("<td id='email-".$row["id"]."' class=\"celda\" ondblclick=\"modificar(this)\">".$row["email"]."</td>");
-        print("<td class=\"celda\"><button name=\"borrar\" value=\"".$row["id"]."\">Borrar fila</button></td></tr>");
+        print("<td class=\"celda\"><button name=\"borrar\" value=\"".$row["id"]."\" onclick=\"deleteRow(this)\" >Borrar fila</button></td></tr>");
     }
     $result->free();
     $mysqli->close();

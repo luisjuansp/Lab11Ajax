@@ -193,5 +193,16 @@ function addRowToTable(data) {
 
     cell = row.insertCell(7);
     cell.setAttribute("class", "celda");
-    cell.innerHTML = "<button name=\"borrar\" value=\"" + dataarray[7] + "\">Borrar fila</button>";
+    cell.innerHTML = "<button name=\"borrar\" value=\"" + dataarray[7] + "\" onclick=\"deleteRow(this)\" >Borrar fila</button>";
+}
+
+
+function deleteRow(x) {
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("POST", 'eliminar.php', true);
+    var data = new FormData();
+    data.append("id", x.value);
+    xmlhttp.send(data);
+    document.getElementById("tabla-usuarios").deleteRow(x.parentNode.parentNode.rowIndex);
 }
